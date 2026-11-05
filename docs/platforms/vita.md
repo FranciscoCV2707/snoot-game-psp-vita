@@ -9,7 +9,10 @@ con SDL2/VitaSDK y crea `build/vita/snoot.vpk`.
 ```powershell
 .\.venv\Scripts\python.exe -m tools.snoot_source --game 'E:\snoot\snootgame\game' --out build/vita-source --profile vita
 .\.venv\Scripts\python.exe platforms/vita/build.py --profile vita
+py -3.12 tools/package_release.py --tag v0.1.0
 ```
+
+El último comando empaqueta el VPK, los datos de runtime y sus licencias en `dist/` para adjuntarlo a un release.
 
 `--trace` en el segundo comando activa el registro del runtime. `--define NOMBRE=VALOR` permite pasar una
 macro C experimental al build de Vita.

@@ -11,6 +11,8 @@
 
 Port creado a partir del código fuente original de PC, con intérprete nativo y recursos generados para Vita.
 
+[⬇️ Descargar la build de Vita](https://github.com/FranciscoCV2707/snoot-game-psp-vita/releases/latest)
+
 </div>
 
 ---
@@ -73,6 +75,14 @@ Los archivos se generan aquí:
 | `build/vita-source/DATA/` | Guiones, imágenes, fuentes y audio generados localmente |
 
 La primera compilación descarga SDL2 dentro de `build/vita/` y puede tardar más.
+
+Para crear el ZIP instalable que acompaña a un release, después de generar el VPK y los datos ejecuta:
+
+```powershell
+py -3.12 tools/package_release.py --tag v0.1.0
+```
+
+Si los artefactos están en otra copia del proyecto, indica su raíz con `--build-root E:\ruta\al\proyecto`.
 
 ## Instalar
 
