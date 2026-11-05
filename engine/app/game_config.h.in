@@ -1,0 +1,6 @@
+#pragma once
+
+#define VN_SEEN_BYTES @VN_SEEN_BYTES@
+#define VN_SAVE_TITLE "@VN_SAVE_TITLE@"
+#define VN_SAVE_PREFIX "@VN_SAVE_PREFIX@"
+#define VN_SAVE_MAGIC "@VN_SAVE_MAGIC@"

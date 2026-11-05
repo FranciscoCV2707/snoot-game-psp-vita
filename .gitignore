@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+build/
+dist/
+*.o
+*.elf
+*.PBP
+*.SFO
+engine/ps1-base/
+games/default/
+games/wani/

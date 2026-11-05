@@ -1,0 +1,100 @@
+"""Tabla de perfiles de recursos por plataforma.
+
+``pc`` copia tal cual. Los demas reducen: imagenes que encajan en ``image_size`` (PNG),
+audio a WAV PCM 16 bits con ``audio_rate`` y ``audio_channels``, y omiten los tipos de
+``skip_kinds``.
+"""
+
+from __future__ import annotations
+
+
+PROFILES: dict[str, dict] = {
+    "pc": {
+        "name": "pc",
+        "description": "PC: recursos originales, copiados tal cual.",
+    },
+    "psp": {
+        "name": "psp",
+        "description": "PSP: imagenes en 480x272; audio >10 s en OGG Vorbis 44100 Hz estereo (q0), el resto WAV PCM 22050 Hz mono; sin video.",
+        "image_size": (480, 272),
+        "audio_rate": 22050,
+        "audio_channels": 1,
+        "music_rate": 44100,
+        "music_channels": 2,
+        "music_quality": 0,
+        "music_threshold": 10,
+        "skip_kinds": {"video"},
+    },
+    "ps2": {
+        "name": "ps2",
+        "description": "PS2: imagenes en 640x448; audio >10 s en OGG Vorbis 44100 Hz estereo (q2), el resto WAV PCM 22050 Hz mono; sin video.",
+        "image_size": (640, 448),
+        "audio_rate": 22050,
+        "audio_channels": 1,
+        "music_rate": 44100,
+        "music_channels": 2,
+        "music_quality": 2,
+        "music_threshold": 10,
+        "skip_kinds": {"video"},
+    },
+    "vita": {
+        "name": "vita",
+        "description": "PS Vita: imagenes en 960x544; audio >10 s en OGG Vorbis 44100 Hz estereo (q4), el resto WAV PCM 22050 Hz mono.",
+        "image_size": (960, 544),
+        "audio_rate": 22050,
+        "audio_channels": 1,
+        "music_rate": 44100,
+        "music_channels": 2,
+        "music_quality": 4,
+        "music_threshold": 10,
+        "skip_kinds": set(),
+    },
+    "3ds": {
+        "name": "3ds",
+        "description": "3DS: imagenes en 400x240; audio >10 s en OGG Vorbis 32000 Hz estereo (q1), el resto WAV PCM 22050 Hz mono; sin video.",
+        "image_size": (400, 240),
+        "audio_rate": 22050,
+        "audio_channels": 1,
+        "music_rate": 32000,
+        "music_channels": 2,
+        "music_quality": 1,
+        "music_threshold": 10,
+        "skip_kinds": {"video"},
+    },
+    "wii": {
+        "name": "wii",
+        "description": "Wii: imagenes en 640x480; audio >10 s en OGG Vorbis 32000 Hz estereo (q2), el resto WAV PCM 22050 Hz mono; sin video.",
+        "image_size": (640, 480),
+        "audio_rate": 22050,
+        "audio_channels": 1,
+        "music_rate": 32000,
+        "music_channels": 2,
+        "music_quality": 2,
+        "music_threshold": 10,
+        "skip_kinds": {"video"},
+    },
+    "xbox": {
+        "name": "xbox",
+        "description": "Xbox clasica: imagenes en 640x480; audio >10 s en OGG Vorbis 44100 Hz estereo (q3), el resto WAV PCM 22050 Hz mono.",
+        "image_size": (640, 480),
+        "audio_rate": 22050,
+        "audio_channels": 1,
+        "music_rate": 44100,
+        "music_channels": 2,
+        "music_quality": 3,
+        "music_threshold": 10,
+        "skip_kinds": set(),
+    },
+    "switch": {
+        "name": "switch",
+        "description": "Switch: imagenes en 1280x720; audio >10 s en OGG Vorbis 44100 Hz estereo (q5), el resto WAV PCM 44100 Hz mono.",
+        "image_size": (1280, 720),
+        "audio_rate": 44100,
+        "audio_channels": 1,
+        "music_rate": 44100,
+        "music_channels": 2,
+        "music_quality": 5,
+        "music_threshold": 10,
+        "skip_kinds": set(),
+    },
+}
